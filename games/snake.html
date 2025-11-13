@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake — Fungames4you</title>
+  <style>
+    html,body{height:100%;margin:0;background:#000;color:#0f0;display:flex;align-items:center;justify-content:center}
+    canvas{background:#011;display:block;border:4px solid #012}
+    .overlay{position:fixed;left:12px;top:12px;color:#8f8;font-family:monospace}
+  </style>
+</head>
+<body>
+  <div class="overlay">Arrow keys to move — R to restart</div>
+  <canvas id="c" width="500" height="500"></canvas>
+  <script>
+    // Minimal snake game
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const size = 20;
+    const cols = canvas.width/size|0;
+    const rows = canvas.height/size|0;
+    let snake = [{x:Math.floor(cols/2), y:Math.floor(rows/2)}];
+    let dir = {x:0,y:0};
+    let food = spawnFood();
+    let speed = 8;
+    let tick=0;
+    function spawnFood(){
+      return {x: Math.floor(Math.random()*cols), y: Math.floor(Math.random()*rows)};
+    }
+    function step(){
+      tick++;
+      if(tick < 60/speed) return;
+      tick=0;
+      const head = {x:snake[0].x+dir.x, y:snake[0].y+dir.y};
+      if(head.x<0||head.x>=cols||head.y<0||head.y>=rows || snake.some(s=>s.x===head.x&&s.y===head.y)){ 
+        // dead - restart
+        snake=[{x:Math.floor(cols/2), y:Math.floor(rows/2)}];
+        dir={x:0,y:0};
+        food=spawnFood();
+        return;
+      }
+      snake.unshift(head);
+      if(head.x===food.x && head.y===food.y){
+        food=spawnFood();
+        speed = Math.min(20, speed+0.5);
+      } else {
+        snake.pop();
+      }
+    }
+    function draw(){
+      ctx.fillStyle='#001'; ctx.fillRect(0,0,canvas.width,canvas.height);
+      // draw food
+      ctx.fillStyle='#f55'; ctx.fillRect(food.x*size+2,food.y*size+2,size-4,size-4);
+      // draw snake
+      ctx.fillStyle='#6f6'; for(let i=0;i<snake.length;i++){ 
+        const s=snake[i];
+        ctx.fillRect(s.x*size+1, s.y*size+1, size-2, size-2);
+      }
+    }
+    function loop(){ step(); draw(); requestAnimationFrame(loop); }
+    loop();
+    window.addEventListener('keydown', e=>{
+      if(e.key==='ArrowUp' && dir.y!==1){dir={x:0,y:-1}}
+      if(e.key==='ArrowDown' && dir.y!==-1){dir={x:0,y:1}}
+      if(e.key==='ArrowLeft' && dir.x!==1){dir={x:-1,y:0}}
+      if(e.key==='ArrowRight' && dir.x!==-1){dir={x:1,y:0}}
+      if(e.key==='r' || e.key==='R'){ snake=[{x:Math.floor(cols/2), y:Math.floor(rows/2)}]; dir={x:0,y:0}; food=spawnFood(); speed=8; }
+    });
+  </script>
+</body>
+</html>

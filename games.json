@@ -1,0 +1,22 @@
+[
+  {
+    "id": "snake-local",
+    "title": "Snake (example)",
+    "description": "A small local HTML5 Snake game included with the site.",
+    "longDescription": "This is a simple single-player Snake game implemented in HTML/CSS/JS. Because it is local, it will always run on your site and is a good example of adding unblocked games.",
+    "thumbnail": "games/snake-thumb.png",
+    "url": "games/snake.html",
+    "tags": ["snake","classic","singleplayer"],
+    "type": "local"
+  },
+  {
+    "id": "roblox-style-placeholder",
+    "title": "Roblox-style (placeholder)",
+    "description": "A placeholder entry for a Roblox-like game. See README for legal/safety guidance.",
+    "longDescription": "This is a placeholder for a Roblox-style or user-created multiplayer game. DO NOT upload or mirror Roblox content you do not own. Build original games or host user-submitted games with permission.",
+    "thumbnail": "games/placeholder-thumb.png",
+    "url": "games/roblox-placeholder.html",
+    "tags": ["roblox","roblox-like","placeholder"],
+    "type": "local"
+  }
+]
