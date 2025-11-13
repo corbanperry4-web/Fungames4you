@@ -4,7 +4,7 @@
     "title": "Snake (example)",
     "description": "A small local HTML5 Snake game included with the site.",
     "longDescription": "This is a simple single-player Snake game implemented in HTML/CSS/JS. Because it is local, it will always run on your site and is a good example of adding unblocked games.",
-    "thumbnail": "games/snake-thumb.png",
+    "thumbnail": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%230b1220'/><text x='50%' y='50%' fill='%232dd4bf' font-size='22' dominant-baseline='middle' text-anchor='middle'>Snake</text></svg>",
     "url": "games/snake.html",
     "tags": ["snake","classic","singleplayer"],
     "type": "local"
@@ -14,9 +14,19 @@
     "title": "Roblox-style (placeholder)",
     "description": "A placeholder entry for a Roblox-like game. See README for legal/safety guidance.",
     "longDescription": "This is a placeholder for a Roblox-style or user-created multiplayer game. DO NOT upload or mirror Roblox content you do not own. Build original games or host user-submitted games with permission.",
-    "thumbnail": "games/placeholder-thumb.png",
+    "thumbnail": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%230b1220'/><text x='50%' y='50%' fill='%232dd4bf' font-size='18' dominant-baseline='middle' text-anchor='middle'>Placeholder</text></svg>",
     "url": "games/roblox-placeholder.html",
     "tags": ["roblox","roblox-like","placeholder"],
+    "type": "local"
+  },
+  {
+    "id": "zombie-baseball",
+    "title": "Zombie Baseball",
+    "description": "Hit zombies with baseballs to score points — a tiny HTML5 demo.",
+    "longDescription": "Zombie Baseball is a simple single-player HTML5 canvas game: click to throw baseballs from the bat to hit approaching zombies. Press R to reset. This demo is intentionally small so it runs reliably as a local game.",
+    "thumbnail": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%230b1220'/><text x='50%' y='50%' fill='%23f59' font-size='20' dominant-baseline='middle' text-anchor='middle'>Zombie Baseball</text></svg>",
+    "url": "games/zombie-baseball.html",
+    "tags": ["zombie","baseball","shooter","arcade"],
     "type": "local"
   }
 ]
